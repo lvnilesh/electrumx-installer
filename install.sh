@@ -11,7 +11,7 @@ UPDATE_PYTHON=0
 VERBOSE=0
 USE_ROCKSDB=1
 ELECTRUMX_GIT_URL="https://github.com/spesmilo/electrumx"
-ELECTRUMX_GIT_BRANCH=""
+ELECTRUMX_GIT_BRANCH="1.16.0"
 
 installer=$(realpath $0)
 
@@ -171,7 +171,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 	elif [[ $($python -V 2>&1) == *"Python 3.7"* ]] > /dev/null 2>&1; then
 		_info "Python 3.7 is already installed."
 	elif [[ $($python -V 2>&1) == *"Python 3.10.2+"* ]] > /dev/null 2>&1; then
-		_info "Python 3.10.2+ is already installed."		
+		_info "Python 3.10.2+ is already installed."
 	else
 		_status "Installing Python 3.7"
 		python=python3.7
@@ -182,7 +182,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 			_error "Unable to install Python 3.7" 4
 		fi
 	fi
-	
+
 
 	_status "Installing git"
 	install_git
@@ -241,7 +241,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 
 	if declare -f package_cleanup > /dev/null; then
 		_status "Cleaning up"
-		package_cleanup	
+		package_cleanup
 	fi
 	_info "electrumx has been installed successfully. Edit /etc/electrumx.conf to configure it."
 else

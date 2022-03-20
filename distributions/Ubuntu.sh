@@ -1,5 +1,5 @@
-if [ "$VERSION_ID" != "18.04" ] && [ "$VERSION_ID" != "20.04" ]; then
-	_warning "Only the last two LTS versions (18.04 and 20.04) are officially supported (but this will probably work)"
+if [ "$VERSION_ID" != "18.04" ] && [ "$VERSION_ID" != "20.04" ] && [ "$VERSION_ID" != "22.04" ]; then
+	_warning "Only the last three LTS versions (18.04, 20.04, 22.04) are officially supported (but this will probably work)"
 fi
 
 . distributions/base.sh

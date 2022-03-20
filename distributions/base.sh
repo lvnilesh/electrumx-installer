@@ -1,7 +1,7 @@
 # Contains functions that should work on all POSIX-compliant systems
 function create_db_dir {
 	mkdir -p $1
-	chown electrumx:electrumx $1
+	chown -R electrumx:electrumx $1
 }
 
 function check_pyrocksdb {
@@ -20,7 +20,7 @@ function install_electrumx {
 	fi
 	if [ $USE_ROCKSDB == 1 ]; then
 		# We don't necessarily want to install plyvel
-		sed -i "s/'plyvel',//" setup.py
+		# sed -i "s/'plyvel',//" setup.py
 	fi
 	if [ "$python" != "python3" ]; then
 		sed -i "s:usr/bin/env python3:usr/bin/env python3.7:" electrumx_rpc

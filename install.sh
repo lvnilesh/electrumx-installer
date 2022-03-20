@@ -170,6 +170,8 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 		_info "Python 3.6 is already installed."
 	elif [[ $($python -V 2>&1) == *"Python 3.7"* ]] > /dev/null 2>&1; then
 		_info "Python 3.7 is already installed."
+	elif [[ $($python -V 2>&1) == *"Python 3.10.2+"* ]] > /dev/null 2>&1; then
+		_info "Python 3.10.2+ is already installed."		
 	else
 		_status "Installing Python 3.7"
 		python=python3.7

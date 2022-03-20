@@ -20,7 +20,7 @@ function install_electrumx {
 	fi
 	if [ $USE_ROCKSDB == 1 ]; then
 		# We don't necessarily want to install plyvel
-		# sed -i "s/'plyvel',//" setup.py
+		sed -i "s/'plyvel',//" setup.py
 	fi
 	if [ "$python" != "python3" ]; then
 		sed -i "s:usr/bin/env python3:usr/bin/env python3.7:" electrumx_rpc
